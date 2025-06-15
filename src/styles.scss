@@ -1,0 +1,306 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Lucida Sans Regular';
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+section{
+    padding: 2rem 9%;
+}
+.banners{
+    display: flex;
+    align-items: center;
+    min-height: 80vb;
+    background: url('../images/banner-bg.jpg')no-repeat;
+    background-size: cover;
+    background-position: center;
+  
+}
+.banner-image{
+   margin-top: 4rem;
+    background: url('../images/bannershoe.png') no-repeat center center;
+    background-size: contain; /* Prevent cropping */
+    width: 500px; /* Adjust for proper display */
+    height: 500px;
+}
+.banners .content{
+    max-width: 60rem;
+}
+.banners .content h3{
+    font-size: 6rem;
+    color: #eee;
+    font-family: 'Franklin Gothic Medium';
+}
+.banners .content span{
+    font-size: 3rem;
+    color: #fc5a03;
+   padding: 1rem 0;
+   line-height: 1.5;
+}
+.banners .content p{
+    font-size: 1.5rem;
+    color: #eee;
+   padding: 1rem 0;
+   line-height: 1.5;
+}
+header{
+    position: fixed;
+    top: 0;left: 0; right: 0;
+    background: #fff;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .1rem 1rem #161515
+}
+header .logo{
+    font-size: 3rem;
+    color: #000000;
+    font-weight: bolder;
+}
+header .navbar ul{
+    font-size: 2rem;
+    color: #161515;
+    list-style: none; 
+    margin: 0;      
+    padding: 0;      
+    display: flex;    
+    align-items: center; 
+}
+.navbar li {
+  margin-right: 6rem; 
+}
+
+header .navbar li:hover{
+    color: rgb(191, 188, 188);
+}
+.header-icons i{
+    font-size: 2.5rem;
+    color: #1b151b;
+    margin-left: 2rem;
+   
+}
+.header-icons i:hover{
+color: #605e5e;
+ cursor: pointer;
+}
+header #toggler{
+    display: none;
+}
+header .fa-bars{
+    font-size: 3rem;
+    color: #161515;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border: .1rem solid #161515;
+    display: none;
+}
+//product list grid
+.product-card-grid{
+  padding: 2rem;             
+  display: grid;             
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 1rem; 
+}
+.product-single-card{
+    background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -2px rgba(0, 0, 0, 0.1); 
+  border: 1px solid #e5e7eb; 
+  border-radius: 0.75rem;   
+  padding: 1.5rem;          
+  display: flex;            
+  flex-direction: column;   
+  gap: 1.5rem;              
+  position: relative;      
+}
+
+//Edition 
+.product-single-card .edition{
+    position: absolute;
+    top: 1rem;left:1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+   z-index: 1rem;
+}
+.product-single-card .green {
+    color: green;
+     font-size: 1.2rem;
+}
+
+.product-single-card .red {
+    color: red;
+    font-size: 1.2rem;
+}
+
+.product-single-card .blueviolet {
+    color: blueviolet;
+     font-size: 1.2rem;
+}
+//edition ^
+//image
+.product-single-card .img-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+    height: auto;
+}
+
+.img-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; 
+}
+.img-container img:hover {
+    transform: scale(1.1); /* Slightly enlarges image -animation */ 
+}
+//image ^
+//color swatch
+.color-options {
+    display: flex; /* Enables horizontal layout */
+    gap: 8px; /* Adds space between buttons */
+    justify-content: center; /* Centers buttons horizontally */
+    align-items: center; /* Aligns buttons vertically */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+.color-button{
+  
+    width: 1.5rem; /* Set a small fixed width */
+    height: 1.5rem; /* Match height to width */
+    border-radius: 50%; /* Makes it circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    font-size: 14px; /* Adjust text size */
+    padding: 0; /* Remove extra padding */
+
+}
+//color ^
+//star rating 
+.star-rating {
+    display: flex;
+    gap: 5px;
+    font-size: 2rem;
+}
+
+.star {
+    transition: color 0.2s ease-in-out;
+}
+//star rating ^
+// card Buttons 
+.product-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.cart-button, .wishlist-button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #e5e7eb;
+    color: #333;
+    border: none;
+    transition: 0.2s ease-in-out;
+}
+.cart-button:hover {
+   transform: scale(1.1);
+}
+
+.wishlist-button:hover {
+ transform: scale(1.1);
+}
+.cart-button.active {
+    background-color: #ff9800; /* Orange for cart */
+    color: white;
+}
+
+.wishlist-button.active {
+    background-color: #e91e63; /* Pink for wishlist */
+    color: white;
+}
+// card buttons
+
+
+.product-details .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Limits to 1 line */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* Hides extra text */
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+//product list grid ^
+// media queries 
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;;
+    }
+    header{
+        padding: 2rem;
+    }
+   .product-card-grid {
+    grid-template-columns: repeat(3, 1fr); /* Reduce columns */
+}
+.banners .content h3 {
+    font-size: 4rem;
+}
+}
+
+@media(max-width:768px){
+    header .fa-bars{
+        display: block;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;left: 0; right: 0;
+        background: #eee;
+        box-shadow: 0 .1rem .5rem #161515 ;
+        clip-path: polygon(0 0,100% 0,100% 0,0 0);
+    }
+     header #toggler:checked ~  .navbar{
+    clip-path: polygon(0 0,100% 0%,100% 100%,0 100%);
+     }
+header .navbar ul{
+    margin: .1rem;
+    padding: 1rem;
+    background:#eee;
+    box-shadow: 0 .01rem 0rem #777575 ;
+    display: block;
+}
+header .navbar li{
+    padding: 1rem;
+}
+.product-card-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 4 */
+}
+
+}
+@media (max-width:450px){
+    html{
+        font-size: 50%;;
+    }
+  .product-card-grid {
+    grid-template-columns: 1fr; /* Single column */
+}
+ .banner-image {
+        display: none; /* Hides the banner image */
+    }
+}
